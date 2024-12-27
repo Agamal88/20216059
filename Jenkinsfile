@@ -1,16 +1,23 @@
 pipeline {
     agent any
+
     stages {
-        stage('Clone Repository') {
+        stage('Declarative: Checkout SCM') {
             steps {
-                // Clones the repository
-                git url: 'https://github.com/Agamal88/20216059.git', branch: 'main'
+                checkout scm
             }
         }
+        
+        stage('Clone Repository') {
+            steps {
+                git 'https://github.com/Agamal88/20216059.git'
+            }
+        }
+
         stage('Execute Script') {
             steps {
-                // Execute the bash script
-                sh './list_files.sh'
+                // Use the converted batch script
+                bat 'list_files.bat'
             }
         }
     }
