@@ -4,7 +4,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 // Clones the repository
-                git url: 'https://github.com/your-username/your-repo-name.git', branch: 'main'
+                git url: 'https://github.com/Agamal88/20216059.git', branch: 'main'
             }
         }
         stage('Execute Script') {
