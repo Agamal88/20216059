@@ -1,1 +1,2 @@
-ls -l
+@echo off
+dir /b
